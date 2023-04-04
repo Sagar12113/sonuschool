@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+  <title>contact-us</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/js/script.js">
+</head>
+
+<body>
+    <div class="navbar h-auto">
+        <div class="bg-gray-100 dark-mode:bg-gray-900">
+            <div class="w-full text-gray-700 bg-white">
+                <div x-data="{ open: true }"
+                    class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+                    <div class="flex flex-row items-center justify-between p-4">
+                        <a href="../index.html"
+                            class="text-3xl font-bold tracking-widest text-indigo-400 uppercase rounded-lg  focus:outline-none focus:shadow-outline">High
+                            School</a>
+                        <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline"
+                            @click="open = !open">
+                            <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+                                <path x-show="!open" fill-rule="evenodd"
+                                    d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+                                    clip-rule="evenodd"></path>
+                                <path x-show="open" fill-rule="evenodd"
+                                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <nav :class="{'flex': open, 'hidden': !open}"
+                        class="flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row">
+                        <a class="academics px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                            href="html/academic.html">ACADEMICS</a>
+                        <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                            href="html/form.html">ENROLLMENT</a>
+                        <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                            href="html/contact-us.html">CONTACT US</a>
+                        <!-- <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                            href="#">MORE</a> -->
+                        <div @click.away="open = false" class="relative" x-data="{ open: false}">
+                            <button @click="open = !open"
+                                class="flex flex-row text-white bg-black items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">
+                                <span>More</span>
+                                <svg fill="currentColor" viewBox="0 0 20 20"
+                                    :class="{'rotate-180': open, 'rotate-0': !open}"
+                                    class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
+                                    <path fill-rule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </button>
+                            <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                                x-transition:enter-start="transform opacity-0 scale-95"
+                                x-transition:enter-end="transform opacity-100 scale-100"
+                                x-transition:leave="transition ease-in duration-75"
+                                x-transition:leave-start="transform opacity-100 scale-100"
+                                x-transition:leave-end="transform opacity-0 scale-95"
+                                class="absolute right-0 w-full md:max-w-screen-sm md:w-screen mt-2 origin-top-right">
+                                <div class="px-2 pt-2 pb-4 bg-white rounded-md shadow-lg">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <a class="flex row items-start rounded-lg bg-transparent p-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                                            href="#">
+                                            <div class="bg-teal-500 text-white rounded-lg p-3">
+                                                <svg fill="none" stroke="currentColor" stroke-linecap="round"
+                                                    stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                                                    class="md:h-6 md:w-6 h-4 w-4">
+                                                    <path
+                                                        d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z">
+                                                    </path>
+                                                </svg>
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="font-semibold">Appearance</p>
+                                                <p class="text-sm">Easy customization</p>
+                                            </div>
+                                        </a>
+
+                                        <a class="flex row items-start rounded-lg bg-transparent p-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                                            href="#">
+                                            <div class="bg-teal-500 text-white rounded-lg p-3">
+                                                <svg fill="none" stroke="currentColor" stroke-linecap="round"
+                                                    stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                                                    class="md:h-6 md:w-6 h-4 w-4">
+                                                    <path
+                                                        d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z">
+                                                    </path>
+                                                </svg>
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="font-semibold">Comments</p>
+                                                <p class="text-sm">Check your latest comments</p>
+                                            </div>
+                                        </a>
+
+                                        <a class="flex row items-start rounded-lg bg-transparent p-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                                            href="#">
+                                            <div class="bg-teal-500 text-white rounded-lg p-3">
+                                                <svg fill="none" stroke="currentColor" stroke-linecap="round"
+                                                    stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                                                    class="md:h-6 md:w-6 h-4 w-4">
+                                                    <path d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"></path>
+                                                    <path d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path>
+                                                </svg>
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="font-semibold">Analytics</p>
+                                                <p class="text-sm">Take a look at your statistics</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+  <div class="flex py-10 items-center justify-start bg-indigo-500">
+    <div class="mx-auto w-full max-w-lg">
+      <h1 class="text-4xl font-medium text-white">Contact us</h1>
+      <p class="mt-3 text-black font-bold">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+
+      <form action="#" class="mt-14">
+        <div class="grid gap-6 sm:grid-cols-2">
+          <div class="relative">
+            <input type="text"
+              class="block mt-3 w-full appearance-none border-0 border-b border-black bg-transparent py-2.5 px-0 text-sm font-medium text-white focus:border-indigo-300 focus:outline-none focus:ring-0"
+              placeholder=" " />
+            <label class="absolute top-3 -translate-y-6 text-xl text-white">Your name</label>
+          </div>
+          <div class="relative ">
+            <input type="text"
+              class="block w-full appearance-none mt-3 border-0 border-b border-black bg-transparent py-2.5 px-0 text-sm font-medium text-white focus:border-indigo-300 focus:outline-none focus:ring-0"
+              placeholder=" " />
+            <label class="absolute top-3 -translate-y-6 text-xl text-white">Your email</label>
+          </div>
+          <div class="relative col-span-2">
+            <textarea name="message" rows="5"
+              class="block w-full mt-3 appearance-none border-0 border-b border-black bg-transparent py-2.5 px-0 text-sm font-medium text-white focus:border-indigo-300 focus:outline-none focus:ring-0"
+              placeholder=" "></textarea>
+            <label class="absolute top-0 -translate-y-2 text-xl text-white">Your message</label>
+          </div>
+        </div>
+        <button type="submit" class="mt-5 rounded-md bg-black px-10 py-2 text-indigo-200">Send Message</button>
+      </form>
+    </div>
+  </div>
+  <div class="footer w-full bg-indigo-600 text-white">
+    <div class="xl:px-40 pb-12 lg:px-20 md:px-10 sm:px-5 px-10">
+        <div class="w-full pt-12 flex flex-col sm:flex-row space-y-2  justify-start">
+            <div class="w-full sm:w-2/5 pr-6 flex flex-col space-y-4">
+                <h1 class="text-white text-4xl font-bold">High School</h1>
+                <p class="text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis, illo.
+                </p>
+            </div>
+            <div class="w-full sm:w-1/5 flex flex-col space-y-4">
+                <a class="text-white">About Us</a>
+                <a class="text-white">Responsibilities</a>
+                <a class="text-white">Our Services</a>
+                <a class="text-white">Contact</a>
+            </div>
+            <div class="w-full sm:w-1/5 flex flex-col space-y-4">
+                <a class="text-white">Campus</a>
+                <a class="text-white">Our mission</a>
+                <a class="text-white">Our Achievements</a>
+                <a class="text-white">Batch info.</a>
+            </div>
+            <div class="svg w-full sm:w-1/5 pt-6 flex items-end mb-1">
+                <div class="flex flex-row space-x-4">
+                    <i class="fab fa-facebook-f cursor-pointer"></i>
+                    <i class="fab fa-instagram cursor-pointer"></i>
+                    <i class="fab fa-twitter cursor-pointer"></i>
+                    <i class="fa-brands fa-youtube cursor-pointer"></i>
+                </div>
+            </div>
+        </div>
+        <div class=" pt-2">
+            <p>© 2023 High School.</p>
+        </div>
+    </div>
+</div>
+
+  <script>
+    ScrollReveal({
+      reset: true,
+      distance: '60px',
+      duration: 1500,
+      delay: 600
+    });
+
+    ScrollReveal().reveal('.h4', { delay: 2000, origin: 'bottom' });
+  </script>
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
+</body>
+
+</html>

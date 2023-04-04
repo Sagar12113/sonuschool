@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+.form{
+    background-image: url(/img/school-design-1727572_1280.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.news-card{
+    background-color: blueviolet;
+    animation: background 30s ease-in-out infinite  backwards;
+}
+
+@keyframes background{
+    from{
+        filter: hue-rotate(180deg);
+    }
+    to{
+        filter: hue-rotate(-130deg);
+    }
+}
+.news-card1{
+    background-color: rgb(99, 248, 40);
+    animation: background 20s ease-in-out infinite  backwards;
+}
+@keyframes background{
+    from{
+        filter: hue-rotate(180deg);
+    }
+    to{
+        filter: hue-rotate(-130deg);
+    }
+}
+
+
